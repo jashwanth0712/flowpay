@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'sample.dart';
-
+import 'components/wallet_connect.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -55,15 +55,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => Sample()),
                 );
               },
-              child: Text('Go to New Page'),
+              child: Text('himanshu'),
             ),
-            const Text(
-              'You have pushed the button this many times:',
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => WalletConnect()),
+                );
+              },
+              child: Text('jashwanth'),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+
           ],
         ),
       ),
