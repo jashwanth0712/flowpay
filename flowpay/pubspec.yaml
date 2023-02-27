@@ -39,6 +39,7 @@ dependencies:
   flow_dart_sdk: ^0.0.1
   scan: ^1.6.0
   qr_flutter: ^4.0.0
+  blockies: ^0.1.2
 
 dev_dependencies:
   flutter_test:
