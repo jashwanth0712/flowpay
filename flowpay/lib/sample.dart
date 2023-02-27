@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
+import 'components/scanpage.dart';
 class Sample extends StatelessWidget {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
@@ -14,8 +14,10 @@ class Sample extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.qr_code_scanner_rounded),
             onPressed: () {
-              // Open the side menu
-              _key.currentState!.openDrawer();
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) {
+                    return ScanPage();
+                  }));
             },
           ),
         ] ,
