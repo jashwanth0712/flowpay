@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'qrscannerpage.dart';
+import 'recieve_payment.dart';
 class WalletConnect extends StatefulWidget {
   const WalletConnect({Key? key}) : super(key: key);
 
@@ -24,7 +25,13 @@ class _WalletConnectState extends State<WalletConnect> {
               context,
               MaterialPageRoute(builder: (context) => QrScannerPage()),
             );
-          }, child: Text("Scan"))
+          }, child: Text("Scan")),
+          ElevatedButton(onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => RecievePayment()),
+            );
+          }, child: Text("get QR "))
         ],
       ),
     );
