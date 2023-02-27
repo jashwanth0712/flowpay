@@ -3,6 +3,8 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'dart:ui' as ui;
 import 'dart:async';
 import 'package:flutter/services.dart';
+import 'paymentdetails.dart';
+
 class RecievePayment extends StatefulWidget {
   @override
   _RecievePaymentState createState() => _RecievePaymentState();
@@ -67,31 +69,10 @@ class _RecievePaymentState extends State<RecievePayment> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => PaymentDetails(selectedButton: _selectedButton,mobileNum: "6281437985",),
-      ),
-    );
-  }
-}
-
-class PaymentDetails extends StatelessWidget {
-  final String mobileNum;
-  final String selectedButton;
-
-  PaymentDetails({required this.selectedButton,required this.mobileNum});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(mobileNum+"@"+selectedButton),
-      ),
-      body: Center(
-        child: QrImage(
-          data: selectedButton,
-          version: QrVersions.auto,
-          size: 320,
-          gapless: false,
-        )
+        builder: (context) => PaymentDetails(
+          selectedButton: _selectedButton,
+          mobileNum: "6281437985",
+        ),
       ),
     );
   }
