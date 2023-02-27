@@ -139,8 +139,6 @@ class Sample extends StatelessWidget {
   }
 }
 
-// var myDrawer = CryptoSidebar();
-
 var drawer = Drawer(
   backgroundColor: Colors.grey[900],
   child: ListView(
