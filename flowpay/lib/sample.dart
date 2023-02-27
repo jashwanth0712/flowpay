@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'components/scanpage.dart';
+
 class Sample extends StatelessWidget {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
@@ -9,18 +10,16 @@ class Sample extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-
-        actions:[
+        actions: [
           IconButton(
             icon: Icon(Icons.qr_code_scanner_rounded),
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) {
-                    return ScanPage();
-                  }));
+              Navigator.push(context, MaterialPageRoute(builder: (_) {
+                return ScanPage();
+              }));
             },
           ),
-        ] ,
+        ],
         backgroundColor: Colors.black,
         shadowColor: Colors.transparent,
         automaticallyImplyLeading: true,
@@ -30,72 +29,337 @@ class Sample extends StatelessWidget {
           mainCard,
           Row(
             children: [
-              Container(
-                margin: EdgeInsets.all(15),
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.circular(35),
+              Expanded(
+                child: Container(
+                  height: 180,
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Spacer(),
+                      Text(
+                        "Buy Tez",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "with your card",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                child: Column(
-                  children: [
-                    Text(
-                      "Buy Tez",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Text(
-                      "with your card",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
+              ),
+              Expanded(
+                child: Container(
+                  height: 180,
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF1E00B7),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Spacer(),
+                      Text(
+                        "Earn 5%",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "on your tez",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              )
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  height: 180,
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.red[800],
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Spacer(),
+                      Text(
+                        "INDIA ART FAIR",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "9-12 FEB 2023",
+                        style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           )
         ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
+      drawer: drawer,
+    );
+  }
+}
+
+// var myDrawer = CryptoSidebar();
+
+var drawer = Drawer(
+  backgroundColor: Colors.grey[900],
+  child: ListView(
+    padding: EdgeInsets.zero,
+    children: [
+      DrawerHeader(
+        decoration: BoxDecoration(
+          color: Colors.grey[900],
+        ),
+        child: Column(
           children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                'Side Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
+            SizedBox(
+              height: 10,
             ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                // Add your settings code here
-              },
+            CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 35,
             ),
-            ListTile(
-              leading: Icon(Icons.help),
-              title: Text('Help'),
-              onTap: () {
-                // Add your help code here
-              },
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Himanshu",
+              style: TextStyle(
+                fontSize: 24,
+                color: Colors.white,
+              ),
             ),
           ],
         ),
       ),
-    );
-  }
-}
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 15),
+        // decoration: BoxDecoration(
+        //     border:
+        //         Border(bottom: BorderSide(color: Colors.grey, width: 1))),
+        child: ListTile(
+          minLeadingWidth: 20,
+          tileColor: Colors.grey[800],
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+          leading: Icon(
+            Icons.backup_rounded,
+            color: Colors.white,
+          ),
+          title: Text(
+            'Backup',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {
+            // Add your settings code here
+          },
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 15),
+        // decoration: BoxDecoration(
+        //     border:
+        //         Border(bottom: BorderSide(color: Colors.grey, width: 1))),
+        child: ListTile(
+          minLeadingWidth: 20,
+          tileColor: Colors.grey[800],
+          // shape: RoundedRectangleBorder(
+          //     borderRadius: BorderRadius.circular(20)),
+          leading: Icon(
+            Icons.lock_rounded,
+            color: Colors.white,
+          ),
+          title: Text(
+            'Change passcode',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {
+            // Add your settings code here
+          },
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 15),
+        // decoration: BoxDecoration(
+        //     border:
+        //         Border(bottom: BorderSide(color: Colors.grey, width: 1))),
+        child: ListTile(
+          minLeadingWidth: 20,
+          tileColor: Colors.grey[800],
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))),
+          leading: Icon(
+            Icons.fingerprint,
+            color: Colors.white,
+          ),
+          title: Text(
+            'Sign in with Biometrics',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {
+            // Add your settings code here
+          },
+        ),
+      ),
+      SizedBox(
+        height: 15,
+      ),
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 15),
+        child: ListTile(
+          minLeadingWidth: 20,
+          tileColor: Colors.grey[800],
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          leading: Icon(
+            Icons.wallet_rounded,
+            color: Colors.white,
+          ),
+          title: Text(
+            'Connected wallets',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {
+            // Add your settings code here
+          },
+        ),
+      ),
+      SizedBox(
+        height: 15,
+      ),
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 15),
+        child: ListTile(
+          minLeadingWidth: 20,
+          tileColor: Colors.grey[800],
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          leading: Icon(
+            Icons.network_check_rounded,
+            color: Colors.white,
+          ),
+          title: Text(
+            'Network',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {
+            // Add your settings code here
+          },
+        ),
+      ),
+      SizedBox(
+        height: 15,
+      ),
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 15),
+        child: ListTile(
+          minLeadingWidth: 20,
+          tileColor: Colors.grey[800],
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+          leading: Icon(
+            Icons.settings_rounded,
+            color: Colors.white,
+          ),
+          title: Text(
+            'Settings',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {
+            // Add your settings code here
+          },
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 15),
+        child: ListTile(
+          minLeadingWidth: 20,
+          tileColor: Colors.grey[800],
+          // shape: RoundedRectangleBorder(
+          //     borderRadius:
+          //         BorderRadius.vertical(top: Radius.circular(20))),
+          leading: Icon(
+            Icons.policy_rounded,
+            color: Colors.white,
+          ),
+          title: Text(
+            'Privacy Policy',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {
+            // Add your help code here
+          },
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 15),
+        child: ListTile(
+          minLeadingWidth: 20,
+          tileColor: Colors.grey[800],
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))),
+          leading: Icon(
+            Icons.help,
+            color: Colors.white,
+          ),
+          title: Text(
+            'Help',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {
+            // Add your help code here
+          },
+        ),
+      ),
+    ],
+  ),
+);
 
 var mainCard = Container(
   alignment: Alignment.centerLeft,
   width: double.infinity,
   height: 200,
-  margin: const EdgeInsets.all(15),
+  margin: const EdgeInsets.all(10),
   padding: const EdgeInsets.all(20),
   decoration: BoxDecoration(
       color: const Color(0xFF762CD5), borderRadius: BorderRadius.circular(30)),
