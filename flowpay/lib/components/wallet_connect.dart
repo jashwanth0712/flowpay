@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'qrscannerpage.dart';
 class WalletConnect extends StatefulWidget {
   const WalletConnect({Key? key}) : super(key: key);
 
@@ -13,8 +14,18 @@ class _WalletConnectState extends State<WalletConnect> {
       appBar: AppBar(
         title: Text('New Page'),
       ),
-      body: Center(
-        child: Text('This is a wallet connect page.'),
+      body: Column(
+        children: [
+          Center(
+            child: Text('This is a wallet connect page.'),
+          ),
+          ElevatedButton(onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => QrScannerPage()),
+            );
+          }, child: Text("Scan"))
+        ],
       ),
     );
   }
