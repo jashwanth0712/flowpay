@@ -2,7 +2,7 @@ import 'package:flowpay/components/paymentdetails.dart';
 import 'package:flutter/material.dart';
 import 'chainselect.dart';
 
-Future<dynamic> bottomsheet(BuildContext context) {
+Future<dynamic> bottomsheet(BuildContext context, String mode) {
   return showModalBottomSheet(
     elevation: 20,
     backgroundColor: Colors.grey[900],
@@ -45,6 +45,7 @@ Future<dynamic> bottomsheet(BuildContext context) {
               image: "https://cryptologos.cc/logos/flow-flow-logo.png",
               chain: "Flow",
               mobileNo: '7339933495',
+              mode: mode,
             ),
             SizedBox(
               height: 20,
@@ -54,6 +55,7 @@ Future<dynamic> bottomsheet(BuildContext context) {
                   "https://blog.logomyway.com/wp-content/uploads/2021/11/Ethereum-logo.png",
               chain: "Ethereum",
               mobileNo: '7339933495',
+              mode: mode,
             ),
             SizedBox(
               height: 20,
@@ -63,6 +65,7 @@ Future<dynamic> bottomsheet(BuildContext context) {
                   "https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png",
               chain: "Solana",
               mobileNo: '7339933495',
+              mode: mode,
             ),
             SizedBox(
               height: 20,
@@ -72,6 +75,7 @@ Future<dynamic> bottomsheet(BuildContext context) {
                   "https://github.com/jashwanth0712/flowpay/blob/main/flowpay/assets/icons/rupee.png?raw=true",
               chain: "Rupee",
               mobileNo: '7339933495',
+              mode: mode,
             ),
           ],
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'sample.dart';
 import 'components/wallet_connect.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flowpay',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
       home: const MyHomePage(title: 'Home page'),
     );
@@ -66,7 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text('jashwanth'),
             ),
-
           ],
         ),
       ),
