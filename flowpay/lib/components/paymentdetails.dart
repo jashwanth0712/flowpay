@@ -34,7 +34,7 @@ Future<dynamic> showQR(BuildContext context, String mobileNum, String chain) {
             ),
             PaymentDetails(selectedButton: chain, mobileNum: mobileNum),
             SizedBox(
-              height: 40,
+              height: 20,
             ),
           ],
         ),

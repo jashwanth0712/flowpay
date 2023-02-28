@@ -32,31 +32,6 @@ class ScanPage extends StatelessWidget {
                 });
               },
             ),
-            Positioned(
-              bottom: 0,
-              child: Row(
-                children: [
-                  ElevatedButton(
-                    child: Text("toggleTorchMode"),
-                    onPressed: () {
-                      controller.toggleTorchMode();
-                    },
-                  ),
-                  ElevatedButton(
-                    child: Text("pause"),
-                    onPressed: () {
-                      controller.pause();
-                    },
-                  ),
-                  ElevatedButton(
-                    child: Text("resume"),
-                    onPressed: () {
-                      controller.resume();
-                    },
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),

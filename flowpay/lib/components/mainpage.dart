@@ -87,8 +87,10 @@ class mainPage extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Transform.rotate(
-                      angle: 0,
+                    GestureDetector(
+                      onTap: () {
+                        bottomsheet(context, 'send');
+                      },
                       child: Container(
                         padding: const EdgeInsets.all(15),
                         decoration: BoxDecoration(
@@ -104,15 +106,15 @@ class mainPage extends StatelessWidget {
                     const SizedBox(
                       width: 10,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(50)),
-                      child: GestureDetector(
-                        onTap: () {
-                          bottomsheet(context);
-                        },
+                    GestureDetector(
+                      onTap: () {
+                        bottomsheet(context, 'qr');
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(50)),
                         child: Icon(
                           Icons.qr_code_rounded,
                           size: 30,

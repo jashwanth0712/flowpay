@@ -1,3 +1,4 @@
+import 'package:flowpay/components/sendcrypto.dart';
 import 'package:flutter/material.dart';
 import 'paymentdetails.dart';
 
@@ -5,11 +6,13 @@ class chainselect extends StatelessWidget {
   final String chain;
   final String image;
   final String mobileNo;
+  final String mode;
 
   const chainselect({
     required this.chain,
     required this.image,
     required this.mobileNo,
+    required this.mode,
     super.key,
   });
 
@@ -18,10 +21,21 @@ class chainselect extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.pop(context);
-        if (chain == "Rupee") {
-          showQR(context, mobileNo, 'ybl');
-        } else {
-          showQR(context, mobileNo, chain.toLowerCase().substring(0, 3));
+        if (mode == 'qr') {
+          if (chain == "Rupee") {
+            showQR(context, mobileNo, 'ybl');
+          } else {
+            showQR(context, mobileNo, chain.toLowerCase().substring(0, 3));
+          }
+        } else if (mode == 'send') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => SendCrypto(
+                      chain: chain,
+                      image: image,
+                    )),
+          );
         }
       },
       child: Container(
