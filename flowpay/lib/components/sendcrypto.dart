@@ -33,27 +33,27 @@ class SendCrypto extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            // TextField(
-            //   autofocus: true,
-            //   style: TextStyle(color: Colors.white),
-            //   decoration: InputDecoration(
-            //     labelStyle: TextStyle(color: Colors.white),
-            //     labelText: 'UPI ID',
-            //     contentPadding: EdgeInsets.all(20),
-            //     icon: Icon(
-            //       Icons.account_balance_rounded,
-            //       color: Colors.white,
-            //     ),
-            //     enabledBorder: OutlineInputBorder(
-            //         borderSide: BorderSide(width: 1, color: Colors.white),
-            //         borderRadius: BorderRadius.circular(20)),
-            //     border:
-            //         OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 30,
-            // ),
+            TextField(
+              autofocus: true,
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                labelStyle: TextStyle(color: Colors.white),
+                labelText: 'UPI ID',
+                contentPadding: EdgeInsets.all(20),
+                icon: Icon(
+                  Icons.account_balance_rounded,
+                  color: Colors.white,
+                ),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 1, color: Colors.white),
+                    borderRadius: BorderRadius.circular(20)),
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
             TextField(
               autofocus: true,
               keyboardType: TextInputType.number,
@@ -62,7 +62,6 @@ class SendCrypto extends StatelessWidget {
                 FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}'))
               ],
               decoration: InputDecoration(
-
                 labelStyle: TextStyle(color: Colors.white),
                 labelText: 'Amount',
                 icon: Image.network(
