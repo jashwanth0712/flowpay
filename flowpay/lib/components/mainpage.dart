@@ -1,12 +1,41 @@
 import 'package:flowpay/components/paymentdetails.dart';
 import 'package:flutter/material.dart';
 import 'bottomsheet.dart';
+import 'sendcrypto.dart';
 
 class mainPage extends StatelessWidget {
-  const mainPage({Key? key}) : super(key: key);
+  final String chain;
+  final String balance;
+  final String image;
+  final String id;
+
+  const mainPage({
+    Key? key,
+    required this.chain,
+    required this.balance,
+    required this.image,
+    required this.id,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Color color = Color.fromRGBO(255, 255, 255, 1);
+    Color color1 = Color.fromARGB(255, 0, 0, 0);
+    Color color2 = Color.fromARGB(255, 0, 0, 0);
+    if (chain == 'Flow') {
+      color1 = const Color(0xFF16FF99);
+      color2 = const Color(0xFF00EF8B);
+      color = Color.fromARGB(255, 0, 0, 0);
+    } else if (chain == 'Ethereum') {
+      color1 = const Color(0xFF00C6FF);
+      color2 = const Color(0xFF0072FF);
+    } else if (chain == 'Solana') {
+      color1 = Color(0xFF9945FF);
+      color2 = Color(0xFF14F195);
+    } else if (chain == 'Rupee') {
+      color1 = Color.fromARGB(255, 59, 3, 90);
+      color2 = Color.fromARGB(255, 170, 95, 255);
+    }
     return Container(
       alignment: Alignment.centerLeft,
       width: double.infinity,
@@ -16,8 +45,8 @@ class mainPage extends StatelessWidget {
       decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 59, 3, 90),
-              Color.fromARGB(255, 170, 95, 255),
+              color1,
+              color2,
             ],
             begin: Alignment.bottomLeft,
             end: Alignment.topRight,
@@ -32,10 +61,10 @@ class mainPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                children: const [
+                children: [
                   Icon(
                     Icons.account_circle,
-                    color: Colors.white,
+                    color: color,
                   ),
                   SizedBox(
                     width: 5,
@@ -43,7 +72,7 @@ class mainPage extends StatelessWidget {
                   Text(
                     "himanshu",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: color,
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
                     ),
@@ -51,18 +80,20 @@ class mainPage extends StatelessWidget {
                 ],
               ),
               Row(
-                children: const [
+                children: [
                   Text(
-                    "tz1...vCW",
+                    id,
                     style: TextStyle(
-                        color: Colors.white54, fontWeight: FontWeight.w300),
+                      color: color.withOpacity(0.5),
+                      fontWeight: FontWeight.w300,
+                    ),
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   Icon(
                     Icons.copy,
-                    color: Colors.white54,
+                    color: color.withOpacity(0.5),
                   ),
                 ],
               )
@@ -72,12 +103,25 @@ class mainPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              const Text(
-                "\$0.00",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold),
+              Row(
+                children: [
+                  Image.network(
+                    image,
+                    height: 30,
+                    width: 30,
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    balance,
+                    style: TextStyle(
+                      fontSize: 35,
+                      color: color,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
               Container(
                 padding: const EdgeInsets.all(10),
@@ -89,6 +133,14 @@ class mainPage extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //       builder: (context) => SendCrypto(
+                        //             chain: chain,
+                        //             image: image,
+                        //           )),
+                        // );
                         bottomsheet(context, 'send');
                       },
                       child: Container(
@@ -108,6 +160,12 @@ class mainPage extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
+                        // if (chain == "Rupee") {
+                        //   showQR(context, id.substring(0, 10), 'upi');
+                        // } else {
+                        //   showQR(context, id.substring(0, 10),
+                        //       chain.toLowerCase().substring(0, 3));
+                        // }
                         bottomsheet(context, 'qr');
                       },
                       child: Container(

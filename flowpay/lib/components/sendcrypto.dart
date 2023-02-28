@@ -15,7 +15,6 @@ class SendCrypto extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text("Send Money"),
         backgroundColor: Colors.black,
       ),
       body: Container(
@@ -59,7 +58,7 @@ class SendCrypto extends StatelessWidget {
               keyboardType: TextInputType.number,
               style: TextStyle(color: Colors.white),
               inputFormatters: <TextInputFormatter>[
-                FilteringTextInputFormatter.digitsOnly
+                FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}'))
               ],
               decoration: InputDecoration(
                 labelStyle: TextStyle(color: Colors.white),
@@ -100,7 +99,7 @@ class SendCrypto extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
           ],
         ),
