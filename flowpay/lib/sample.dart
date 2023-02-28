@@ -4,6 +4,7 @@ import 'components/scanpage.dart';
 import 'components/mainpage.dart';
 import 'components/drawer.dart';
 import 'components/card.dart';
+
 class Sample extends StatelessWidget {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
@@ -13,7 +14,10 @@ class Sample extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-            icon: Icon(Icons.qr_code_scanner_rounded),
+            icon: Image.network(
+              "https://raw.githubusercontent.com/jashwanth0712/flowpay/main/flowpay/assets/icons/scan.png",
+              height: 25,
+            ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (_) {
                 return ScanPage();
@@ -27,19 +31,31 @@ class Sample extends StatelessWidget {
       ),
       body: Column(
         children: [
-
           mainPage(),
           Row(
             children: [
-              card(heading: 'Buy Flow',subheading: 'with UPI',color: Colors.amber,onPressed: (){},),
-              card(heading: 'Earn 5%',subheading: 'By staking',color: Color(0xff1e00b7),onPressed: (){},),
-
+              card(
+                heading: 'Buy Flow',
+                subheading: 'with UPI',
+                color: Colors.amber,
+                onPressed: () {},
+              ),
+              card(
+                heading: 'Earn 5%',
+                subheading: 'By staking',
+                color: Color(0xff1e00b7),
+                onPressed: () {},
+              ),
             ],
           ),
           Row(
             children: [
-              card(heading: 'View transactions',subheading: 'with flowpay',color: Colors.red,onPressed: (){},),
-
+              card(
+                heading: 'View transactions',
+                subheading: 'with flowpay',
+                color: Colors.red,
+                onPressed: () {},
+              ),
             ],
           )
         ],
