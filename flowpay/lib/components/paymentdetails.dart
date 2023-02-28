@@ -58,7 +58,7 @@ class PaymentDetails extends StatelessWidget {
           QrImage(
             data: mobileNum + "@" + selectedButton,
             version: QrVersions.auto,
-            size: 300,
+            size: 250,
             gapless: false,
             foregroundColor: Colors.white,
           ),

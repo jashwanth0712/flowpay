@@ -23,7 +23,7 @@ class chainselect extends StatelessWidget {
         Navigator.pop(context);
         if (mode == 'qr') {
           if (chain == "Rupee") {
-            showQR(context, mobileNo, 'ybl');
+            showQR(context, mobileNo, 'upi');
           } else {
             showQR(context, mobileNo, chain.toLowerCase().substring(0, 3));
           }
