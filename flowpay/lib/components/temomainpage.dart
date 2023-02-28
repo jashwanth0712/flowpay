@@ -6,7 +6,7 @@ class mainPage extends StatelessWidget {
   const mainPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    var a= '5.01';
+    var a= '4.01';
 
     return Container(
       alignment: Alignment.centerLeft,

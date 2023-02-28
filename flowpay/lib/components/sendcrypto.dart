@@ -34,34 +34,36 @@ class SendCrypto extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
+            // TextField(
+            //   autofocus: true,
+            //   style: TextStyle(color: Colors.white),
+            //   decoration: InputDecoration(
+            //     labelStyle: TextStyle(color: Colors.white),
+            //     labelText: 'UPI ID',
+            //     contentPadding: EdgeInsets.all(20),
+            //     icon: Icon(
+            //       Icons.account_balance_rounded,
+            //       color: Colors.white,
+            //     ),
+            //     enabledBorder: OutlineInputBorder(
+            //         borderSide: BorderSide(width: 1, color: Colors.white),
+            //         borderRadius: BorderRadius.circular(20)),
+            //     border:
+            //         OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: 30,
+            // ),
             TextField(
               autofocus: true,
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                labelStyle: TextStyle(color: Colors.white),
-                labelText: 'UPI ID',
-                contentPadding: EdgeInsets.all(20),
-                icon: Icon(
-                  Icons.account_balance_rounded,
-                  color: Colors.white,
-                ),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 1, color: Colors.white),
-                    borderRadius: BorderRadius.circular(20)),
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            TextField(
               keyboardType: TextInputType.number,
               style: TextStyle(color: Colors.white),
               inputFormatters: <TextInputFormatter>[
                 FilteringTextInputFormatter.digitsOnly
               ],
               decoration: InputDecoration(
+
                 labelStyle: TextStyle(color: Colors.white),
                 labelText: 'Amount',
                 icon: Image.network(
@@ -79,7 +81,7 @@ class SendCrypto extends StatelessWidget {
             Spacer(),
             GestureDetector(
               onTap: () {
-                Timer(Duration(seconds: 3), () {
+                Timer(Duration(seconds: 1), () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => SuccessPage()));
                 });
@@ -100,7 +102,7 @@ class SendCrypto extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
           ],
         ),

@@ -1,9 +1,12 @@
+import 'package:flowpay/components/show_webview.dart';
 import 'package:flutter/material.dart';
+import 'package:magic_sdk/magic_sdk.dart';
 import 'sample.dart';
 import 'components/wallet_connect.dart';
-
+import 'components/loginpage.dart';
 void main() {
   runApp(const MyApp());
+  Magic.instance = Magic("pk_live_0A04869131EC9A94");
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +20,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: const MyHomePage(title: 'Home page'),
+      home: Stack(
+        children: [
+          const MyHomePage(title: 'Home page'),
+
+          Magic.instance.relayer // Insert Magic relayer here
+        ],
+      )
+
     );
   }
 }
@@ -66,6 +76,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: Text('jashwanth'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
+              child: Text('Login'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>MyWebView( selectedUrl: 'https://razorpay-api.vercel.app/')),
+                );
+              },
+              child: Text('blocto'),
             ),
           ],
         ),

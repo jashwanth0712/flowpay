@@ -39,7 +39,7 @@ Future<dynamic> bottomsheet(BuildContext context, String mode) {
                   color: Colors.white),
             ),
             SizedBox(
-              height: 40,
+              height: 24,
             ),
             chainselect(
               image: "https://cryptologos.cc/logos/flow-flow-logo.png",
@@ -48,7 +48,7 @@ Future<dynamic> bottomsheet(BuildContext context, String mode) {
               mode: mode,
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             chainselect(
               image:
@@ -58,7 +58,7 @@ Future<dynamic> bottomsheet(BuildContext context, String mode) {
               mode: mode,
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             chainselect(
               image:
@@ -68,7 +68,7 @@ Future<dynamic> bottomsheet(BuildContext context, String mode) {
               mode: mode,
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             chainselect(
               image:

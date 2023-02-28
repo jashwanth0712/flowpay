@@ -1,11 +1,11 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'components/scanpage.dart';
-import 'components/mainpage.dart';
-import 'components/drawer.dart';
-import 'components/card.dart';
-import 'components/show_webview.dart';
-class Sample extends StatelessWidget {
+import 'scanpage.dart';
+import 'temomainpage.dart';
+import 'drawer.dart';
+import 'card.dart';
+
+class Temp extends StatelessWidget {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
@@ -50,20 +50,11 @@ class Sample extends StatelessWidget {
           ),
           Row(
             children: [
-              Expanded(
-                child: GestureDetector(
-                  child: card(
-                    heading: 'View transactions',
-                    subheading: 'with flowpay',
-                    color: Colors.red,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) =>MyWebView( selectedUrl: 'https://razorpay-api.vercel.app/')),
-                      );
-                    },
-                  ),
-                ),
+              card(
+                heading: 'View transactions',
+                subheading: 'with flowpay',
+                color: Colors.red,
+                onPressed: () {},
               ),
             ],
           )

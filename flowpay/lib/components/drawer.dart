@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'show_webview.dart';
 import 'package:blockies/blockies.dart';
 class sideDrawer extends StatelessWidget {
   const sideDrawer({Key? key}) : super(key: key);
@@ -57,14 +58,18 @@ class sideDrawer extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
               leading: Icon(
-                Icons.backup_rounded,
+                Icons.link,
                 color: Colors.white,
               ),
               title: Text(
-                'Backup',
+                'Website',
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>MyWebView( selectedUrl: 'https://authentic-learning-668089.framer.app/')),
+                );
                 // Add your settings code here
               },
             ),
