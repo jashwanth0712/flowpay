@@ -62,7 +62,6 @@ class SendCrypto extends StatelessWidget {
                 FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}'))
               ],
               decoration: InputDecoration(
-
                 labelStyle: TextStyle(color: Colors.white),
                 labelText: 'Amount',
                 icon: Image.network(
