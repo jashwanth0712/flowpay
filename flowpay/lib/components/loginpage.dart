@@ -12,7 +12,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   Magic magic = Magic.instance;
 
-  final textController = TextEditingController(text: '+18888888888');
+  final textController = TextEditingController(text: '6281437985');
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +44,8 @@ class _LoginPageState extends State<LoginPage> {
                   foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
                 ),
                 onPressed: () async {
-                  // var token =await magic.auth.loginWithMagicLink(email: "jashwanth0712@gmail.com",showUI: true);
-                  var token =await magic.auth.loginWithMagicLink(email: '',showUI: true);
+                  var token =await magic.auth.loginWithMagicLink(email: "jashwanth0712@gmail.com",showUI: true);
+                  // var token =await magic.auth.loginWithMagicLink(email: '',showUI: true);
                   debugPrint('token, $token');
 
                   if (token.isNotEmpty) {
